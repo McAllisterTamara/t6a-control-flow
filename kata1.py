@@ -1,2 +1,2 @@
-for check in range(1, 12):
-    print(f"Check {check}: {check * 15} minutes after shift start")
+for check_number in range(1, 11):
+    print("Check", check_number)
