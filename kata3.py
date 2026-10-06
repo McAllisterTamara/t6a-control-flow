@@ -1,10 +1,15 @@
-# pick one
+total_aisles = 3
+total_shelves = 4
 
-# A: Location Codes (nested loop). Print the codes for 3 aisles × 4 shelves, one row per aisle.
-# Expected first row: A1-S1 A1-S2 A1-S3 A1-S4
-
-
-# B: Incident Validation (guard clauses). Using the incidents in kata3.py, skip any with no branch or a severity outside 1–3, and print why.
-# Expected: INC-1001 and INC-1004 are logged; INC-1002 and INC-1003 are skipped.
-
-# Stretch: do the other Kata 3 option too.
+# Outer loop handles each aisle
+for aisle in range(1, total_aisles + 1):
+    row_output = []
+    
+    # Inner loop handles shelves within the current aisle
+    for shelf in range(1, total_shelves + 1):
+        # Format the location code (e.g., A1-S1)
+        location_code = f"A{aisle}-S{shelf}"
+        row_output.append(location_code)
+    
+    # Print all shelves for the current aisle on a single row, separated by spaces
+    print("  ".join(row_output))
